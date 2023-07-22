@@ -1,0 +1,10 @@
+from phonenumbers import parse, timezone,geocoder,carrier
+num=input("Enter the number with country code: ")
+phone= parse(num)
+time=timezone.time_zones_for_number(phone)
+car=carrier.name_for_number(phone,"en")
+reg=geocoder.description_for_number(phone,"en")
+print(phone)
+print("Time Zone: ",time)
+print("Carrier: ",car)
+print("Registration : ",reg)
